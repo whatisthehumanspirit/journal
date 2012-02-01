@@ -1,0 +1,78 @@
+/* Screen Styles */
+
+html {
+  height: 100%;
+}
+
+body {
+  overflow: hidden; /* Not sure why hiding overflow prevents scrollbars in FF      */
+  margin: 0px;      /* It's not necessary with Webkit & FB.Canvas.setAutoResize(); */
+  padding: 0px;
+}
+
+div {
+  margin:0px;
+  padding:0px;
+}
+
+h1, h2, h3, h4, h5, p, table {
+  margin-top: 0px;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+}
+
+a, a:visited, a:hover, a:active {
+  color: #000000;
+  text-decoration: none;
+}
+
+a img {
+  border: none;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+/* Utility styles */
+
+.center {
+  text-align: center;
+}
+
+.round-corners-8px {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+
+/* ID- and class-specific styles */
+
+#tab-container {
+  position: relative;
+  width: 520px;
+}
+
+#fan-warning {
+  position: absolute;
+  left: 100px;
+  top: 96px;
+  border: 8px solid #999999;
+  width: 304px;
+  background-color: #ffffff;
+  color: #990000;
+}
+
+#fan-warning h3 {
+  margin: 16px;
+  text-align: left;
+}
+
+

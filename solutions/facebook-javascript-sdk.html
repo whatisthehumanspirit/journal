@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:og="http://ogp.me/ns#" 
+      xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+    <!-- jquery-form-243.js if you want to use an Ajax form -->
+    
+    <script>
+      $(document).ready(function() {          
+        $('#form').validate();
+
+        /*
+        $('#form').ajaxForm( {
+          success: function(response, stat, xhr, elem) {
+            // Placeholder
+          },
+          error: function(xhr, status, err) {
+            // Placeholder
+          }
+        });
+        */
+      });
+
+      function loginFacebook() {
+        FB.login(function(response){
+          if( response.session ) {
+            // This might be handy for database operations
+            var uid = response.session.uid;
+            var access_token = response.session.access_token;
+          } else {
+            // Placeholder
+          }
+        }, {perms:'publish_stream'});
+      }
+      
+      function shareFacebook() {
+          FB.ui(
+            {
+              method: 'feed',
+              name: 'Story title',
+              link: 'Link to tab',
+              picture: 'Link to 90x90-pixel JPG or PNG',
+              caption: 'Story text',
+              description: 'More story text',
+              display: 'popup'
+            }
+          );
+        }
+    </script>
+  </head>
+  
+  <body>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+            appId: '205382019500973',
+            status: true, // check login status
+            cookie: true, // use cookies
+            xfbml: true   // parse xfbml
+        });
+    
+        FB.Canvas.setAutoResize();
+      };
+  
+      (function() {
+        var e = document.createElement('script');
+        //e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+        e.src = 'https://connect.facebook.net/en_US/all.js';  // avoids intermittent https-required error
+        e.async = true;
+        document.getElementById('fb-root').appendChild(e);
+      }());
+    </script>
+    
+    <h2 style="text-align: center;">Some handy starter code built on the Facebook JavaScript SDK</h2>
+  </body>
+</html>

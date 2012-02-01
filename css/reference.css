@@ -1,0 +1,75 @@
+/* Reset styles */
+
+html {
+  height: 100%;
+}
+
+body {
+  margin:0px;
+  padding:0px;
+  height: 100%;
+}
+
+div {
+  margin:0px;
+  padding:0px;
+}
+
+h1, h2, h3, h4, h5, p, table {
+  margin-top: 0px;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+}
+
+a img {
+  border: none;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+/* Reference styles */
+
+.drop-shadow-left {
+  -webkit-box-shadow: -5px 5px 5px #000000;
+}
+
+.drop-shadow-right {
+  -webkit-box-shadow: 5px 5px 5px #000000;
+}
+
+.gradient-vertical {
+  background: -webkit-gradient(linear, left top, left bottom, from(#aaaaaa), to(#888888));
+  background: -moz-linear-gradient(top, #aaaaaa, #888888);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#888888');
+}
+
+.round-corners {
+	border-radius: 8px; /* Chrome & IE 9 */
+	-moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+.round-corners-bottom {
+	border-bottom-right-radius: 8px; /* Chrome & IE 9 */
+	border-bottom-left-radius: 8px; /* Chrome & IE 9 */
+  -moz-border-radius-bottomright: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+}
+
+.transparency {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+

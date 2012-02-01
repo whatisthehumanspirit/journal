@@ -1,0 +1,139 @@
+/* Element Styles */
+
+body {
+  background-color: #000000;
+  font-family: "Times New Roman", serif;
+  color: #ffffff;
+}
+
+/* Layout Styles */
+
+#Page {
+  position: relative;
+  margin: 0px auto;
+  width: 1002px;
+  height: 1532px;
+  background-image: url('../images/background.jpg');
+  background-repeat: no-repeat;
+}
+
+#EventForm {
+  position: absolute;
+  left: 160px;
+  top: 1240px;
+  width: 700px;
+}
+
+.Column {
+  width: 320px;
+}
+
+.RightColumn {
+  float: right;
+}
+
+.LeftColumn {
+  float: left;
+}
+
+.LeftColumn label,
+.RightColumn label {
+  float: left;
+}
+
+.LeftColumn input,
+.RightColumn input {
+  float: right;
+}
+
+.LeftColumn input,
+.RightColumn input {
+  width: 212px;
+  height: 18px;
+}
+
+.Field {
+  margin-bottom: 8px;
+}
+
+.Select label,
+.Select select {
+  float: left;
+  margin-right: 10px;
+  display: inline;
+}
+
+#WebSite {
+  position: absolute;
+  left: 588px;
+  top: 655px;
+  width: 93px;
+  height: 21px;
+}
+
+#Directions {
+  position: absolute;
+  left: 749px;
+  top: 655px;
+  width: 120px;
+  height: 21px;
+}
+
+#Twitter {
+  position: absolute;
+  left: 83px;
+  top: -95px;
+}
+
+
+#Facebook {
+  position: absolute;
+  left: 377px;
+  top: -95px;
+}
+
+#Website {
+  
+}
+
+#BanyanPower {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  width: 264px;
+  height: 24px;
+  background-image: url(../images/banyan-power.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+#BanyanPower a {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 264px;
+  height: 24px;
+}
+
+#Footer {
+  margin-bottom: 32px;
+}
+
+.Clearing {
+  clear: both;
+  height: 0px;
+}
+
+/* Font Styles */
+
+.error {
+ font-weight: bold;
+ list-style-type: none;
+}
+
+.RequiredField {
+  font-variant: italic;
+}

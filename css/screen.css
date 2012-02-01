@@ -1,0 +1,24 @@
+/* Utility styles */
+.center {
+	margin: 0px auto 0px auto;
+}
+
+.clear {
+	clear: both;
+}
+
+/* Screen styles */
+
+body {
+	background-color: #000000;
+}
+
+#main {
+	width: 960px;
+	background-color: #888888;
+	color: #ffffff;
+}
+
+.content-area {
+	padding: 32px;
+}

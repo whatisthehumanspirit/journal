@@ -1,0 +1,12 @@
+/* Mobile styles */
+
+body {
+  background-color: #000000;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#main {
+  background-color: #ffffff;
+  background-image: url(../images/paintbrushes.jpg);
+}
