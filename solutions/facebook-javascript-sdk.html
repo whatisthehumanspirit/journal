@@ -1,47 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:og="http://ogp.me/ns#" 
       xmlns:fb="http://ogp.me/ns/fb#">
   <head>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
-    <!-- jquery-form-243.js if you want to use an Ajax form -->
+    <meta property="fb:admins"      content="[comma-separated list of FB page admin IDs]">
+    <meta property="og:site_name"   content="[web site title]">
+    <meta property="og:image"       content="[URL for 90px image]">
+    <meta property="og:url"         content="[web page URL]">
+    <meta property="og:title"       content="[post title]">
+    <meta property="og:description" content="[post summary]">
+    <meta property="og:type"        content="website">
+                              <!--  content="product">
+                                    content="athlete">
+                                    content="blog">
+                                    content="article">
+                                    content="video"> -->
+    <!-- For video -->
+    <meta property="og:video:url"     content="[video URL]">
+    <meta property="og:video:type"    content="application/x-shockwave-flash">
+    <meta property="og:video:width"   content="[width]">
+    <meta property="og:video:height"  content="[height]">
+    <!-- Further research necessary -->
+    <meta propert="og:locale"             content="">
+    <meta propert="og:locale:alternative" content="">
+                        
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!-- jquery.validate.min.js for form validation -->
+    <!-- jquery-form-243.js form Ajax forms -->
     
     <script>
       $(document).ready(function() {          
-        $('#form').validate();
+          /* $('#form').validate(); */
 
-        /*
-        $('#form').ajaxForm( {
-          success: function(response, stat, xhr, elem) {
-            // Placeholder
-          },
-          error: function(xhr, status, err) {
-            // Placeholder
-          }
-        });
-        */
+          /*
+          $('#form').ajaxForm( {
+              success: function(response, stat, xhr, elem) {
+                  // Placeholder
+              },
+              error: function(xhr, status, err) {
+                  // Placeholder
+              }
+          });
+          */
       });
 
       function loginFacebook() {
-        FB.login(function(response){
-          if( response.session ) {
-            // This might be handy for database operations
-            var uid = response.session.uid;
-            var access_token = response.session.access_token;
-          } else {
-            // Placeholder
-          }
-        }, {perms:'publish_stream'});
+        FB.login(function(response) {
+              if (response.session) {
+                  // This might be handy for database operations
+                  var uid = response.session.uid;
+                  var access_token = response.session.access_token;
+              } else {
+                  // Placeholder
+              }
+          }, {perms:'publish_stream'});
       }
       
       function shareFacebook() {
-          FB.ui(
-            {
+          FB.ui({
               method: 'feed',
               name: 'Story title',
               link: 'Link to tab',
@@ -49,9 +66,8 @@
               caption: 'Story text',
               description: 'More story text',
               display: 'popup'
-            }
-          );
-        }
+          });
+      }
     </script>
   </head>
   
@@ -59,25 +75,26 @@
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
-        FB.init({
-            appId: '205382019500973',
-            status: true, // check login status
-            cookie: true, // use cookies
-            xfbml: true   // parse xfbml
-        });
-    
-        FB.Canvas.setAutoResize();
+          FB.init({
+              appId: '200213283324286', 
+              status: true, // check login status
+              cookie: true, // use cookies
+              xfbml: true   // parse xfbml
+          });
+        
+          // Additional initialization code
+          FB.Canvas.setAutoResize(); // Fixes transient scrollbars
       };
-  
-      (function() {
-        var e = document.createElement('script');
-        //e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-        e.src = 'https://connect.facebook.net/en_US/all.js';  // avoids intermittent https-required error
-        e.async = true;
-        document.getElementById('fb-root').appendChild(e);
-      }());
+      
+      // Load the SDK asynchronously
+      (function(d) {
+          var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+          js = d.createElement('script'); js.id = id; js.async = true;
+          js.src = "//connect.facebook.net/en_US/all.js";
+          d.getElementsByTagName('head')[0].appendChild(js);
+       }(document));
     </script>
     
-    <h2 style="text-align: center;">Some handy starter code built on the Facebook JavaScript SDK</h2>
+    <h2>Some handy starter code built on the Facebook JavaScript SDK</h2>
   </body>
 </html>
