@@ -6,8 +6,8 @@
   <head>
     <meta property="fb:admins"      content="[comma-separated list of FB page admin IDs]">
     <meta property="og:site_name"   content="[web site title]">
-    <meta property="og:image"       content="[URL for 90px image]">
     <meta property="og:url"         content="[web page URL]">
+    <meta property="og:image"       content="[URL for 90px image]">
     <meta property="og:title"       content="[post title]">
     <meta property="og:description" content="[post summary]">
     <meta property="og:type"        content="website">
@@ -68,12 +68,13 @@
       };
       
       // Load the SDK asynchronously
-      (function(d) {
-          var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-          js = d.createElement('script'); js.id = id; js.async = true;
-          js.src = "//connect.facebook.net/en_US/all.js";
-          d.getElementsByTagName('head')[0].appendChild(js);
-       }(document));
+      (function(d){
+           var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement('script'); js.id = id; js.async = true;
+           js.src = "//connect.facebook.net/en_US/all.js";
+           ref.parentNode.insertBefore(js, ref);
+      }(document));
     </script>
     
     <h2>Some handy starter code built on the Facebook JavaScript SDK</h2>
