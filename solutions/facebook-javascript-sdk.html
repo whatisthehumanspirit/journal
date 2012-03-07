@@ -4,30 +4,32 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:og="http://ogp.me/ns#" 
-      xmlns:fb="http://ogp.me/ns/fb#">
+      xmlns:fb="http://ogp.me/ns/fb#"/>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!-- Facebook metadata -->
-    <meta property="fb:admins"      content="[comma-separated list of FB page admin IDs]">
-    <meta property="og:site_name"   content="[web site title]">
-    <meta property="og:url"         content="[web page URL]">
-    <meta property="og:image"       content="[URL for 90px image]">
-    <meta property="og:title"       content="[post title]">
-    <meta property="og:description" content="[post summary]">
-    <meta property="og:type"        content="website">
-                              <!--  content="product">
-                                    content="athlete">
-                                    content="blog">
-                                    content="article">
-                                    content="video"> -->
+    <meta property="fb:admins"      content="[comma-separated list of FB page admin IDs]"/>
+    <meta property="og:site_name"   content="[web site title]"/>
+    <meta property="og:url"         content="[web page URL]"/>
+    <meta property="og:image"       content="[URL for 90px image]"/>
+    <meta property="og:title"       content="[post title]"/>
+    <meta property="og:description" content="[post summary]"/>
+    <meta property="og:type"        content="website"/>
+                              <!--  content="product"/>
+                                    content="athlete"/>
+                                    content="blog"/>
+                                    content="article"/>
+                                    content="video"/> -->
     <!-- For video -->
-    <meta property="og:video"     content="[video URL]">
-    <meta property="og:video:type"    content="application/x-shockwave-flash">
-    <meta property="og:video:width"   content="398">
-    <meta property="og:video:height"  content="224">
+    <meta property="og:video"         content="[video URL]"/>
+    <meta property="og:video:type"    content="application/x-shockwave-flash"/>
+    <meta property="og:video:width"   content="398"/>
+    <meta property="og:video:height"  content="224"/>
     <!-- Further research necessary -->
-    <meta propert="og:locale"             content="">
-    <meta propert="og:locale:alternative" content="">
+    <meta propert="og:locale"             content=""/>
+    <meta propert="og:locale:alternative" content=""/>
+    <!-- In WordPress -->
+    <meta property="og:locale" content="<?php echo get_locale(); ?>"/>
         
     <script>
       function loginFacebook() {
@@ -45,11 +47,11 @@
       function shareFacebook() {
           FB.ui({
               method: 'feed',
-              name: 'Story title',
-              link: 'Link to tab',
-              picture: 'Link to 90x90-pixel JPG or PNG',
-              caption: 'Story text',
-              description: 'More story text',
+              name: '[story title]',
+              link: '[URL]',
+              picture: '[URL for 90px JPG or PNG]',
+              caption: '[story subtitle]',
+              description: '[story description]',
               display: 'popup'
           });
       }
@@ -57,11 +59,30 @@
   </head>
   
   <body>
+    <!--
+      This method for loading the JavaScript SDK might be best if one only 
+      intends to use social plugins
+    -->
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=[app ID]";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    
+    <!--
+      This method for loading the JavaScript SDK should be used if one  
+      intends use Dialogs or the Graph API
+    -->
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
           FB.init({
-              appId: '200213283324286', 
+              appId: '[app ID]', 
               status: true, // check login status
               cookie: true, // use cookies
               xfbml: true   // parse xfbml

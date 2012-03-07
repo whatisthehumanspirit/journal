@@ -28,13 +28,13 @@ a img {
 }
 
 ul {
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-type: none;
 }
 
 table {
-  border-spacing: 0px;
   border-collapse: collapse;
+	border-spacing: 0px;
 }
 
 /* Reference styles */
