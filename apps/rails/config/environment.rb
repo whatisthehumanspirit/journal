@@ -9,5 +9,5 @@ if Dir["#{RAILS_ROOT}/log"].empty?
     Dir.mkdir("#{RAILS_ROOT}/log")
 end
 
-DEBUG_LOGGER = DebugLogger.new("#{RAILS_ROOT}/log/debug.log")
-DEBUG_LOGGER.level = DebugLogger::DEBUG
+$debugLogger = DebugLogger.new("#{RAILS_ROOT}/log/debug.log")
+$debugLogger.level = DebugLogger::DEBUG
