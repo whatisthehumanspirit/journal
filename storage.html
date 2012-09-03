@@ -20,7 +20,7 @@
         newKey.name = keyName;
         newKey.value = keyValue;
         cryptoKeys.push(newKey);
-        localStorage.CryptoKeys = JSON.stringify(cryptoKeys, null, 1);
+        localStorage.CryptoKeys = JSON.stringify(cryptoKeys, null, 0);
       }
       
       function parseCryptoKeys() {
