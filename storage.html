@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+  	
+    <title>Web Storage</title>
+    
+    <script type="text/javascript" src="javascript/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+      function initializeCryptoKeys() {
+        if (!localStorage.CryptoKeys) {
+          localStorage.CryptoKeys = JSON.stringify([]);
+        }
+      }
+      
+      function saveCryptoKey(keyName, keyValue) {
+        var cryptoKeys = JSON.parse(localStorage.CryptoKeys);
+        var newKey = {};
+        newKey.name = keyName;
+        newKey.value = keyValue;
+        cryptoKeys.push(newKey);
+        localStorage.CryptoKeys = JSON.stringify(cryptoKeys, null, 1);
+      }
+      
+      function parseCryptoKeys() {
+        var cryptoKeys = JSON.parse(localStorage.CryptoKeys);
+        // var keyValue = [];
+        // cryptoKeys.forEach(function(key) {
+        //   if (key.keyName == moodQuery) {
+        //     matchingCheckins.push(clone(checkin));
+        //   }
+        // });
+        console.log(cryptoKeys);
+      }
+      
+      function countCryptoKeys() {
+        console.log( JSON.parse(localStorage.CryptoKeys).length );
+      }
+      
+      // initializeCryptoKeys();
+      // saveCryptoKey("Alexis", "0123456789abcdef");
+      // parseCryptoKeys();
+      // console.log(localStorage.CryptoKeys);
+    </script>
+  </head>
+
+  <body>
+    
+  </body>
+</html>
