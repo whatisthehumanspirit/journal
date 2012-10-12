@@ -25,6 +25,27 @@
     <script type="text/javascript" src="javascript/jquery.1.7.2.min.js"></script>
     
     <script>
+      // Load Facebook JavaScript SDK
+      $.ajax({
+        url: "//connect.facebook.net/en_US/all.js",
+        dataType: "script",
+        cache: true
+      });
+      
+      // Load Google +1 JavaScript library
+      $.ajax({
+        url: "https://apis.google.com/js/plusone.js",
+        dataType: "script",
+        cache: true
+      });
+      
+      // Load Pinterest JavaScript
+      $.ajax({
+        url: "http://assets.pinterest.com/js/pinit.js",
+        dataType: "script",
+        cache: true
+      });
+      
       // Load Twitter JavaScript library
       $.ajax({
         url: "http://platform.twitter.com/widgets.js",
@@ -39,23 +60,14 @@
             $(".content-area").append(data);
           },
           complete: function(jqXHR, textStatus) {
-            // Load Google +1 buttons
-            $.ajax({
-              url: "https://apis.google.com/js/plusone.js",
-              dataType: "script",
-              cache: true,
-              success: function() {
-                // Load Google +1 buttons
-                // gapi.plusone.render();
-              }
-            });
+            // Facebook Like buttons load dynamically as their iframes are 
+            // added to the DOM. This does not work with HTML5 divs.
             
-            // Load Pinterest buttons
-            $.ajax({
-              url: "http://assets.pinterest.com/js/pinit.js",
-              dataType: "script",
-              cache: true
-            });
+            // Load Google +1 buttons
+            gapi.plusone.go();
+            
+            // PinIt buttons load dynamically as they are added to the 
+            // DOM.
             
             // Load Twitter buttons
             twttr.widgets.load();
@@ -75,17 +87,5 @@
         
       </div>
     </div>
-    
-    <!-- Load Facebook JavaScript SDK -->
-    <div id="fb-root"></div>
-    <script>
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));  
-    </script>
   </body>
 </html>
