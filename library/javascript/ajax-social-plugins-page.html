@@ -22,37 +22,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/reference.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css">
     
-    <script type="text/javascript" src="javascript/jquery.1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../javascript/social-plugins.js"></script>
     
     <script>
-      // Load Facebook JavaScript SDK
-      $.ajax({
-        url: "//connect.facebook.net/en_US/all.js",
-        dataType: "script",
-        cache: true
-      });
-      
-      // Load Google +1 JavaScript library
-      $.ajax({
-        url: "https://apis.google.com/js/plusone.js",
-        dataType: "script",
-        cache: true
-      });
-      
-      // Load Pinterest JavaScript
-      $.ajax({
-        url: "http://assets.pinterest.com/js/pinit.js",
-        dataType: "script",
-        cache: true
-      });
-      
-      // Load Twitter JavaScript library
-      $.ajax({
-        url: "http://platform.twitter.com/widgets.js",
-        dataType: "script",
-        cache: true
-      });
-      
       function loadContent() {
         $.ajax({
           url: "test-content.html",
@@ -60,17 +33,7 @@
             $(".content-area").append(data);
           },
           complete: function(jqXHR, textStatus) {
-            // Facebook Like buttons load dynamically as their iframes are 
-            // added to the DOM. This does not work with HTML5 divs.
-            
-            // Load Google +1 buttons
-            gapi.plusone.go();
-            
-            // PinIt buttons load dynamically as they are added to the 
-            // DOM.
-            
-            // Load Twitter buttons
-            twttr.widgets.load();
+            k2js.social_plugins.render();
           }
         });
       }
