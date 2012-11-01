@@ -126,5 +126,23 @@ var k2js = {
                       return "desktop"; 
                     }
                   })(navigator.userAgent||navigator.vendor||window.opera) // End client.form_factor
-  } // End client
+  }, // End client
+  
+  request: {
+    /**
+     *  @return {Object[]}
+     */
+    query_string_params:  function() {
+                            var vars = [], hash;
+                            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                            
+                            for(var i = 0; i < hashes.length; i++) {
+                              hash = hashes[i].split('=');
+                              vars.push(hash[0]);
+                              vars[hash[0]] = hash[1];
+                            }
+                            
+                            return vars;
+                          } // End request.query_string_params()
+  } // End request
 } // End k2js
