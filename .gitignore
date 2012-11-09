@@ -1,0 +1,12 @@
+# System
+.DS_Store
+._*
+
+# Rails
+config/database.yml
+log/*
+public/system/*
+tmp/*
+
+# Pow
+config.ru
