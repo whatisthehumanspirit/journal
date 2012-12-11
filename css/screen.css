@@ -14,14 +14,14 @@ body {
 	background-color: #000000;
 }
 
-#main {
+#page {
   margin-bottom: 32px;
 	width: 960px;
 	background-color: #888888;
 	color: #ffffff;
 }
 
-.content-area {
+.content {
 	padding: 32px;
 }
 
