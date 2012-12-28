@@ -15,7 +15,7 @@ body {
 }
 
 #page {
-  margin-bottom: 32px;
+  margin: 0px auto 32px auto;
 	width: 960px;
 	background-color: #888888;
 	color: #ffffff;
