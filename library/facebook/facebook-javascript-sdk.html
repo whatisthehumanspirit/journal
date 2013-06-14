@@ -30,7 +30,7 @@
     <meta property="og:locale" content="<?php echo get_locale(); ?>"/>
     <!-- In Rails -->
     <meta property="og:locale" content="<%= I18n.locale %>"/>
-        
+    
     <script>
       function loginFacebook() {
         FB.login(function(response) {
@@ -92,7 +92,6 @@
           FB.Canvas.setAutoResize(); // Fixes transient scrollbars
       };
       
-      // Load the SDK asynchronously
       (function(d){
            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
            if (d.getElementById(id)) {return;}
