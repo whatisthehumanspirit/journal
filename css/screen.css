@@ -27,6 +27,11 @@ body {
 
 /* Test styles */
 
+.banner {
+  width: 640px;
+  height: 225px;
+}
+
 .control-panel {
   padding: 32px;
   text-align: center;
